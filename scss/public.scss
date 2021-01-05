@@ -1,0 +1,46 @@
+@import "Ginkgo";
+
+body {
+  position: relative;
+
+  display: inline-block;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+  color: rgba(90, 90, 90, 1.00);
+
+  font-size: 13px;
+  text-align: center;
+  font-family: "微軟正黑體", "Open sans", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  background-color: rgba(220, 112, 92, 1);
+  
+  // // 文字染色，背景色、文字色
+  // @include selection(rgba(120, 186, 255, 1.00), rgba(255, 255, 255, 1));
+}
+
+
+.banner_bg {
+  display: inline-block;
+  width: 100%;
+  margin:0;
+  padding:0;
+  background: rgba(220, 112, 92, 1) url(../img/banner.png) 50% top no-repeat;
+  -moz-background-size: cover;
+  background-size: cover;
+
+  @include range-width(0, 450px) {
+    background: rgba(220, 112, 92, 1) url(../img/m_banner.png) 50% top no-repeat;
+  }
+}
+
+
+.top_boxs {
+  display: inline-block;
+  width: 100%;
+  max-width: 1170px;
+
+  // d
+  height: 1000px;
+  border: 1px solid rgba(255, 0, 0, .3);
+}
