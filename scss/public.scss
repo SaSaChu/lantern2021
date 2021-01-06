@@ -14,33 +14,336 @@ body {
   text-align: center;
   font-family: "微軟正黑體", "Open sans", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
   background-color: rgba(220, 112, 92, 1);
-  
+  color: black;
+
   // // 文字染色，背景色、文字色
   // @include selection(rgba(120, 186, 255, 1.00), rgba(255, 255, 255, 1));
 }
 
 
+// cololr
+$yellow: rgba(251, 198, 56, 1);
+$main_color: rgba(220, 112, 92, 1);
+$pink: rgba(226, 51, 197, 1);
+$brown: rgba(57, 45, 42, 1);
+
+
+// other
+.all_boxs {
+  display: inline-block;
+  width: 100%;
+
+  &.m-w115 {
+    width: 115px;
+  }
+}
+
+.l-c {
+  text-align: center;
+}
+
+.order_right {
+  float: right !important;
+}
+.order_left {
+  float: left !important;
+}
+
+
+
+// text
+.text01 {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: black;
+  text-decoration: none;
+}
+.f-text{
+  display: inline-block;
+  width: 100%;
+  color: white;
+  font-size: 1rem;
+  padding-bottom: 20px;
+  padding-left: 80px;
+  position: relative;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  &:before {
+    display: inline-block;
+    content: attr(title);
+    font-weight: bolder;
+    position: absolute;
+    left: 0;
+  }
+
+  @include range-width(0, 450px) {
+    font-size: .9rem;
+    padding-bottom: 15px;
+  }
+}
+
+
+// link
+.link_nav {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.3rem;
+  text-decoration: none;
+  padding: 15px 0;
+  color: black;
+  
+  &.m-u-l {
+    &:nth-child(7) {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    &:nth-child(8) {
+      margin-top: 3.6rem;
+      font-size: 1.3rem;
+    }
+  }
+
+  &:nth-child(7) {
+    margin-top: 3.6rem;
+    font-size: 1.1rem;
+  }
+
+  &:hover {
+    color: $yellow;
+
+    &:before {
+      display: inline-block;
+      content: '';
+      background-image: url(../img/l_icon01.svg);
+      width: 17px;
+      height: 21px;
+      margin: 2px 10px 0 0;
+    }
+  }
+}
+
+.link_icon {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+  
+  &:hover {
+    color: $yellow;
+  }
+
+  &.l-icon-nm {
+    margin-right: 0;
+  }
+}
+
+
+
+// 手機版，側邊menu
+.nav_boxs {
+
+  @include range-width(0, 450px) {
+    display: inline-block;
+  }
+
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  left: 20px;
+  top: 50px;
+  font-size: .9rem;
+  line-height: 22px;
+}
+
+#r_menu_boxs {
+
+  &.nav_open {
+    right: 0;
+  }
+
+  display: inline-block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  right: 100%;
+  top: 0;
+  z-index: 999999;
+  background-color: $main_color;
+  overflow: auto;
+  @include transition(left .3s, right .3s);
+
+  text-align: left;
+  padding: 0 15px; 
+
+
+  .ncu {
+    cursor: auto;
+    padding: 40px 0 20px 0;
+    @include clearfix();
+    border-bottom: 1px dotted rgba(255, 255, 255, .5);
+
+    .icon-x {
+      display: inline-block;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      float: right;
+      font-size: 1.3rem;
+      text-decoration: none;
+      text-align: right;
+      color: block;
+    }
+  }
+}
+
+// 主要內容
 .banner_bg {
   display: inline-block;
   width: 100%;
   margin:0;
   padding:0;
-  background: rgba(220, 112, 92, 1) url(../img/banner.png) 50% top no-repeat;
+  background: $main_color url(../img/banner.png) right bottom no-repeat;
   -moz-background-size: cover;
   background-size: cover;
+  height: 1000px;
+  position: relative;
 
   @include range-width(0, 450px) {
-    background: rgba(220, 112, 92, 1) url(../img/m_banner.png) 50% top no-repeat;
+    background: $main_color url(../img/m_banner.png) 50% top no-repeat;
+    height: 670px;
+  }
+
+  .menu_boxs {
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    left: 100px;
+    top: 0;
+    padding: 4rem 0 0 0;
+    text-align: left;
+
+    @include range-width(0, 450px) {
+      display: none;
+    }
+
+    .title_boxs {
+      display: inline-block;
+
+      // d
+      height: 300px;
+      background-color: rgba(255, 0, 0, 0.2);
+    }
+  }
+}
+
+.se_boxs {
+  display: inline-block;
+  width: 100%;
+  background-color: $main_color;
+
+  // d
+  height: 300px;
+  border: 1px solid rgba(255, 0, 0, .3);
+}
+
+
+
+// footer
+footer {
+  display: inline-block;
+  width: 100%;
+  background-color: $brown;
+  position: relative;
+
+  .f-l-box, .f-r-box {
+    display: inline-block;
+    position: absolute;
+  }
+  .f-l-box {
+    left: 0;
+    bottom: 0;
+
+    img {
+      width: 100%;
+      max-width: 247px;
+
+      @include range-width(1250px, 1460px) {
+        max-width: 197px;
+      }
+      @include range-width(450px, 1250px) {
+        max-width: 127px;
+      }
+      @include range-width(0, 450px) {
+        max-width: 80px;
+      }
+    }
+
+    @include range-width(0, 450px) {
+      right: 0;
+      left: auto;
+      transform: rotateY(180deg);
+    }
+  }
+
+  .f-r-box {
+    right: 0;
+    bottom: 0;
+
+    img {
+      width: 100%;
+      max-width: 220px;
+
+      @include range-width(1250px, 1460px) {
+        max-width: 170px;
+      }
+      @include range-width(450px, 1250px) {
+        max-width: 100px;
+      }
+      @include range-width(0, 450px) {
+        display: none;
+      }
+    }
+  }
+
+  .f-boxs {
+    display: inline-block;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 50px 0;
+
+    @include range-width(1250px, 1460px) {
+      padding: 50px 15px;
+      max-width: 850px;
+    }
+
+    @include range-width(990px, 1250px) {
+      padding: 30px 15px;
+      max-width: 750px;
+    }
+
+    @include range-width(450px, 990px) {
+      padding: 30px 15px;
+      max-width: none;
+    }
+
+    @include range-width(0, 450px) {
+      padding: 30px 15px;
+    }
   }
 }
 
 
-.top_boxs {
-  display: inline-block;
-  width: 100%;
-  max-width: 1170px;
 
-  // d
-  height: 1000px;
-  border: 1px solid rgba(255, 0, 0, .3);
-}
+
+
+
+
+
+
