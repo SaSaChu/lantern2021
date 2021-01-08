@@ -65,6 +65,14 @@ $brown: rgba(57, 45, 42, 1);
     width: 115px;
   }
 
+  &.w90 {
+    width: 90%;
+
+    @include range-width(0, 450px) {
+      width: 100%;
+    }
+  }
+
   &.page_main {
     background-color: white;
     padding: 30px 35px;
@@ -187,10 +195,20 @@ $brown: rgba(57, 45, 42, 1);
   border-bottom: 2px solid rgba(239, 141, 218, 1.00);
 }
 
+.border_D_y {
+  border-bottom: 2px dotted rgba(251, 198, 56, .5);
+}
+
+
+
 
 
 // img
-
+.p_img {
+  display: inline-block;
+  width: 100%;
+  max-width: 990px;
+}
 
 
 // text
@@ -268,6 +286,40 @@ p {
     font-size: 1.7rem;
   }
 }
+.type_late {
+  display: inline-block;
+  color: rgba(155, 155, 155, .6);
+  font-size: 3rem;
+  font-weight: bolder;
+}
+.add_type {
+  font-size: 1.2rem;
+  color: black;
+  text-align: left;
+  padding-bottom: 10px;
+  line-height: 30px;
+
+  &:before {
+    display: inline-block;
+    content: attr(title);
+    font-weight: 600;
+    color: $pink;
+    }
+}
+.l_add_type {
+  font-size: 1.6rem;
+  color: black;
+  text-align: left;
+  padding-bottom: 10px;
+  font-weight: 600;
+
+  &:before {
+    display: inline-block;
+    content: attr(title);
+    font-weight: 600;
+    color: $pink;
+    }
+}
 
 
 
@@ -298,7 +350,7 @@ a {
     }
   }
 
-  &:nth-child(6) {
+  &:nth-child(7) {
     margin-top: 3.6rem;
     font-size: 1.1rem;
   }
@@ -430,10 +482,33 @@ a {
   }
 }
 
+.lantern_title {
+  display: inline-block;
+  padding: 0 20px;
+  color: rgba(239, 139, 219, 1.00);
+  font-size: 1.4rem;
+  font-weight: bolder;
+  position: relative;
+  float: left;
+  margin-bottom: 10px;
+
+  &:hover, &.ac_lantern_title {
+    color: $pink;
+  }
+
+  &:after {
+    display: inline-block;
+    content: '|';
+    position: absolute;
+    top: 0;
+    right: -2px;
+  }
+}
+
 .item_title {
   display: inline-block;
   width: 100%;
-  color: rgba(155, 155, 155, 1.00);
+  color: rgba(155, 155, 155, .7);
   font-size: 1.4rem;
   font-weight: bolder;
 
@@ -448,6 +523,20 @@ a {
   @include range-width(450px, 770px) {
     font-size: 1rem;
   }
+
+  &.d_item_title {
+    width: 80%;
+    @include border-radius(30px);
+    border: 1px solid rgba(155, 155, 155, .7);
+    padding: 10px 0;
+
+    &:hover, &.d_ac_item_title {
+      color: $pink;
+      border: 1px solid $pink;
+      background-color: $pink;
+      color: white;
+    }
+  }
 }
 
 
@@ -459,6 +548,10 @@ a {
 
 .pad_T35 {
   padding-top: 35px;
+
+  @include range-width(0, 450px) {
+    padding-top: 20px;
+  }
 }
 
 .pad_T15 {
@@ -475,10 +568,6 @@ a {
 
 .pad_TD20 {
   padding: 20px 0;
-
-  @include range-width(0, 450px) {
-    padding: 0 0 20px 0;
-  }
 }
 
 .mag_D35 {
@@ -1008,6 +1097,43 @@ header {
     display: none;
   }
 }
+
+.p_boxs3 {
+  display: inline-block;
+  width: calc(100% / 3);
+  float: left;
+  position: relative;
+
+}
+
+.p_boxs4 {
+  display: inline-block;
+  width: calc(100% / 4);
+  float: left;
+  position: relative;
+
+  &:after {
+    display: inline-block;
+    content: '';
+    background-color: rgba(155, 155, 155, .5);
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &:last-child {
+    &:after {
+      display: none;
+    }
+  }
+
+  @include range-width(0, 450px) {
+    width: calc(100% / 2);
+  }
+}
+
 
 .boxs5 {
   display: inline-block;
