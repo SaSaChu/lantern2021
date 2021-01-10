@@ -7,6 +7,8 @@ body.page_bg { min-height: 100%; margin: 0; padding: 0; background: #dc705c url(
 @media screen and (max-width: 779px) and (min-width: 450px) { body.page_bg { background: #dc705c url(../img/page_bg780.png) 50% top no-repeat; -moz-background-size: cover; background-size: cover; } }
 @media screen and (max-width: 449px) and (min-width: 0) { body.page_bg { background: #dc705c url(../img/page_bg450.png) 50% top no-repeat; -moz-background-size: cover; background-size: cover; } }
 
+.teat { display: inline-block; }
+
 .all_boxs { display: inline-block; width: 100%; }
 .all_boxs.m-w115 { width: 115px; }
 .all_boxs.w90 { width: 90%; }
