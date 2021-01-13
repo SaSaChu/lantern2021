@@ -18,6 +18,13 @@ body.page_bg { min-height: 100%; margin: 0; padding: 0; background: #dc705c url(
 
 .ds { display: inline-block; width: 100%; }
 
+.l_box { display: inline-block; width: 220px; float: left; }
+@media screen and (max-width: 449px) and (min-width: 0) { .l_box { width: 100%; } }
+.l_box img { display: inline-block; width: 100%; max-width: 220px; }
+
+.r_box { display: inline-block; width: calc(100% - 220px); float: left; }
+@media screen and (max-width: 449px) and (min-width: 0) { .r_box { width: 100%; } }
+
 .l-c { text-align: center; }
 
 .order_right { float: right !important; }
@@ -82,6 +89,11 @@ p { display: inline-block; padding: 0; margin: 0; }
 
 a { cursor: pointer; text-decoration: none; outline: 0; }
 
+.link_l { display: inline-block; font-size: 1.3rem; font-weight: bolder; color: #392d2a; float: right; }
+@media screen and (max-width: 449px) and (min-width: 0) { .link_l { float: left; } }
+.link_l:hover { color: #e233c5; }
+.link_l:before { display: inline-block; content: ''; background-image: url(../img/l_icon01.svg); width: 17px; height: 35px; background-repeat: no-repeat; margin: 2px 10px 0 0; }
+
 .link_nav { display: inline-block; width: 100%; font-size: 1.3rem; text-decoration: none; padding: 15px 0; color: black; }
 .link_nav.m-u-l:nth-child(7) { margin-top: 0; font-size: 1.3rem; }
 .link_nav.m-u-l:nth-child(8) { margin-top: 3.6rem; font-size: 1.3rem; }
@@ -121,6 +133,9 @@ a { cursor: pointer; text-decoration: none; outline: 0; }
 @media screen and (max-width: 769px) and (min-width: 450px) { .item_title { font-size: 1rem; } }
 .item_title.d_item_title { width: 80%; -moz-border-radius: 30px; -webkit-border-radius: 30px; border-radius: 30px; border: 1px solid rgba(155, 155, 155, 0.7); padding: 10px 0; }
 .item_title.d_item_title:hover, .item_title.d_item_title.d_ac_item_title { color: #e233c5; border: 1px solid #e233c5; background-color: #e233c5; color: white; }
+
+.pad_T20 { padding-top: 20px; }
+@media screen and (max-width: 449px) and (min-width: 0) { .pad_T20 { padding-top: 0; } }
 
 .pad_T25 { padding-top: 25px; }
 
@@ -271,3 +286,23 @@ header { display: inline-block; width: 100%; max-width: 1170px; margin: 0 auto; 
 .p_news_box .n_titel.n_outlink { width: calc(100% - 165px); text-decoration: none; text-align: left; padding-top: 5px; }
 @media screen and (max-width: 449px) and (min-width: 0) { .p_news_box .n_titel.n_outlink { width: 100%; padding-top: 10px; } }
 @media screen and (max-width: 449px) and (min-width: 0) { .p_news_box .n_titel { width: 100%; text-align: left; margin: 0; font-size: 1rem; line-height: 24px; } }
+
+.tf_boxs { display: inline-block; width: 100%; padding: 10px 20px; color: white; font-size: 1.2rem; }
+.tf_boxs.to { background-color: #f79646; }
+.tf_boxs.tored { background-color: red; }
+.tf_boxs.togreen { background-color: green; }
+
+@media screen and (min-width: 0) and (max-width: 919px) { .table { display: block; width: 100%; }
+  .table .tr { display: block; }
+  .table .tr .td { display: block; border-right: 1px solid #f79646; border-bottom: 1px solid #f79646; border-left: 1px solid #f79646; text-align: left; padding: 10px; color: black; }
+  .table .tr .td.tll { border-left: 1px solid #f79646; }
+  .table .tr .td.tdd { border-bottom: 2px solid #f79646; }
+  .table .tr .td:before { content: attr(title); display: inline-block; width: 120px; font-size: .8rem; color: #f79646; font-weight: 600; } }
+@media screen and (min-width: 920px) { .table { display: table; width: 100%; }
+  .table .tr { display: table-row; *zoom: 1; }
+  .table .tr:after { display: table; content: ""; line-height: 0; clear: both; }
+  .table .tr .td { display: table-cell; border-right: 1px solid #f79646; border-bottom: 1px solid #f79646; font-size: 1rem; color: black; padding: 10px 0; }
+  .table .tr .td.tl { border-left: 1px solid #f79646; }
+  .table .tr:first-child .td { position: relative; }
+  .table .tr:first-child .td:before { content: attr(title); display: inline-block; width: 100%; background-color: #fdeada; font-size: 1rem; color: black; padding: 10px 0; margin-top: -10px; margin-bottom: 10px; }
+  .table .tr:first-child .td.to:before { border-bottom: 1px solid #f79646; } }
